@@ -1,31 +1,44 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="app" class="container">
+    <img src="./assets/logo.png" class="logo">
+    <todo-list></todo-list>
   </div>
 </template>
 
+<script>
+import HelloWorld from './components/HelloWorld'
+import TodoList from './components/TodoList'
+
+export default {
+  name: 'App',
+  components: {
+    HelloWorld,
+    TodoList,
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
+* {
+  box-sizing: border-box;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.container{
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+#app{
+  font-family: 'Avenir', Arial, Helvetica, sans-serif;
+  color: #2c3e50;
+  margin-top: 60px;
+  font-size: 24px;
+}
+
+.logo{
+  display: block;
+  margin: 20px auto;
+  height: 75px;
 }
 </style>
+
